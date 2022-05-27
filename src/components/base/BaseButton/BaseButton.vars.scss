@@ -1,0 +1,53 @@
+:root {
+    --baseButton__padding: 0.5rem 1rem;
+    --baseButton__borderRadius: 10px;
+
+    --baseButton__primary: #4627ad;
+    --baseButton__secondary: #A9B7D1;
+
+    /* Primary */
+    --baseButton__primary_color: #ffffff;
+    --baseButton__primary_backgroundColor: var(--baseButton__primary);
+    --baseButton__primary_border: 1px solid transparent;
+    --baseButton__primary_borderRadius: var(--baseButton__borderRadius);
+
+    /* Primary on Hover */
+    --baseButton__primary_color_onHover: #ffffff;
+    --baseButton__primary_backgroundColor_onHover: var(--baseButton__primary);
+
+    /* Primary Outline */
+    --baseButton__primaryOutline_color: var(--baseButton__primary);
+    --baseButton__primaryOutline_backgroundColor: transparent;
+    --baseButton__primaryOutline_border: 1px solid var(--baseButton__primary);
+    --baseButton__primaryOutline_borderRadius: var(--baseButton__borderRadius);
+
+    /* Primary Outline on Hover */
+    --baseButton__primaryOutline_color_onHover: #ffffff;
+    --baseButton__primaryOutline_backgroundColor_onHover: var(--baseButton__primary);
+
+    /* Secondary */
+    --baseButton__secondary_color: #000000;
+    --baseButton__secondary_backgroundColor: var(--baseButton__secondary);
+    --baseButton__secondary_border: 1px solid transparent;
+    --baseButton__secondary_borderRadius: var(--baseButton__borderRadius);
+
+    /* Secondary on Hover */
+    --baseButton__secondary_color_onHover: #000000;
+    --baseButton__secondary_backgroundColor_onHover: var(--baseButton__secondary);
+
+    /* Secondary Outline */
+    --baseButton__secondaryOutline_color: var(--baseButton__secondary);
+    --baseButton__secondaryOutline_backgroundColor: transparent;
+    --baseButton__secondaryOutline_border: 1px solid var(--baseButton__secondary);
+    --baseButton__secondaryOutline_borderRadius: var(--baseButton__borderRadius);
+
+    /* Secondary Outline on Hover */
+    --baseButton__secondaryOutline_color_onHover: #ffffff;
+    --baseButton__secondaryOutline_backgroundColor_onHover: var(--baseButton__secondary);
+}
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         //
+//     }
+// }

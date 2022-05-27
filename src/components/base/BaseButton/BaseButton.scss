@@ -1,0 +1,112 @@
+// @import "./BaseButton.vars.scss";
+
+.baseButton {
+    --baseButton__padding: 0.5rem 1rem;
+    --baseButton__borderRadius: 10px;
+
+    --baseButton__primary: #4627ad;
+    --baseButton__secondary: #A9B7D1;
+
+    /* Primary */
+    --baseButton__primary_color: #ffffff;
+    --baseButton__primary_backgroundColor: var(--baseButton__primary);
+    --baseButton__primary_border: 1px solid transparent;
+    --baseButton__primary_borderRadius: var(--baseButton__borderRadius);
+
+    /* Primary on Hover */
+    --baseButton__primary_color_onHover: #ffffff;
+    --baseButton__primary_backgroundColor_onHover: var(--baseButton__primary);
+
+    /* Primary Outline */
+    --baseButton__primaryOutline_color: var(--baseButton__primary);
+    --baseButton__primaryOutline_backgroundColor: transparent;
+    --baseButton__primaryOutline_border: 1px solid var(--baseButton__primary);
+    --baseButton__primaryOutline_borderRadius: var(--baseButton__borderRadius);
+
+    /* Primary Outline on Hover */
+    --baseButton__primaryOutline_color_onHover: #ffffff;
+    --baseButton__primaryOutline_backgroundColor_onHover: var(--baseButton__primary);
+
+    /* Secondary */
+    --baseButton__secondary_color: #000000;
+    --baseButton__secondary_backgroundColor: var(--baseButton__secondary);
+    --baseButton__secondary_border: 1px solid transparent;
+    --baseButton__secondary_borderRadius: var(--baseButton__borderRadius);
+
+    /* Secondary on Hover */
+    --baseButton__secondary_color_onHover: #000000;
+    --baseButton__secondary_backgroundColor_onHover: var(--baseButton__secondary);
+
+    /* Secondary Outline */
+    --baseButton__secondaryOutline_color: var(--baseButton__secondary);
+    --baseButton__secondaryOutline_backgroundColor: transparent;
+    --baseButton__secondaryOutline_border: 1px solid var(--baseButton__secondary);
+    --baseButton__secondaryOutline_borderRadius: var(--baseButton__borderRadius);
+
+    /* Secondary Outline on Hover */
+    --baseButton__secondaryOutline_color_onHover: #ffffff;
+    --baseButton__secondaryOutline_backgroundColor_onHover: var(--baseButton__secondary);
+
+    display: inline-block;
+    padding: var(--baseButton__padding);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &:active {
+        opacity: 0.75;
+    }
+
+    &[disabled] {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    @each $type in (primary, primaryOutline, secondary, secondaryOutline) {
+        &.baseButton-#{$type} {
+            border: var(--baseButton__#{$type}_border);
+            border-radius: var(--baseButton__#{$type}_borderRadius);
+            color: var(--baseButton__#{$type}_color);
+            background-color: var(--baseButton__#{$type}_backgroundColor);
+
+            &:hover {
+                color: var(--baseButton__#{$type}_color_onHover);
+                background-color: var(--baseButton__#{$type}_backgroundColor_onHover);
+            }
+
+            &.baseButton-link {
+                color: var(--baseButton__#{$type});
+            }
+        }
+    }
+
+    &.baseButton-link {
+        display: inline;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    }
+
+    &.baseButton-icon, &.baseButton-iconOutline {
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
+    &.baseButton-w-full {
+        width: 100%;
+    }
+
+    &.baseButton-rounded-full {
+        border-radius: 9999px;
+    }
+}
