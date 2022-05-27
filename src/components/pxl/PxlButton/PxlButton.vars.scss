@@ -1,0 +1,53 @@
+:root {
+    --pxlButton__padding: 0.5rem 1rem;
+    --pxlButton__borderRadius: 10px;
+
+    --pxlButton__primary: #4627ad;
+    --pxlButton__secondary: #A9B7D1;
+
+    /* Primary */
+    --pxlButton__primary_color: #ffffff;
+    --pxlButton__primary_backgroundColor: var(--pxlButton__primary);
+    --pxlButton__primary_border: 1px solid transparent;
+    --pxlButton__primary_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Primary on Hover */
+    --pxlButton__primary_color_onHover: #ffffff;
+    --pxlButton__primary_backgroundColor_onHover: var(--pxlButton__primary);
+
+    /* Primary Outline */
+    --pxlButton__primaryOutline_color: var(--pxlButton__primary);
+    --pxlButton__primaryOutline_backgroundColor: transparent;
+    --pxlButton__primaryOutline_border: 1px solid var(--pxlButton__primary);
+    --pxlButton__primaryOutline_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Primary Outline on Hover */
+    --pxlButton__primaryOutline_color_onHover: #ffffff;
+    --pxlButton__primaryOutline_backgroundColor_onHover: var(--pxlButton__primary);
+
+    /* Secondary */
+    --pxlButton__secondary_color: #000000;
+    --pxlButton__secondary_backgroundColor: var(--pxlButton__secondary);
+    --pxlButton__secondary_border: 1px solid transparent;
+    --pxlButton__secondary_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Secondary on Hover */
+    --pxlButton__secondary_color_onHover: #000000;
+    --pxlButton__secondary_backgroundColor_onHover: var(--pxlButton__secondary);
+
+    /* Secondary Outline */
+    --pxlButton__secondaryOutline_color: var(--pxlButton__secondary);
+    --pxlButton__secondaryOutline_backgroundColor: transparent;
+    --pxlButton__secondaryOutline_border: 1px solid var(--pxlButton__secondary);
+    --pxlButton__secondaryOutline_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Secondary Outline on Hover */
+    --pxlButton__secondaryOutline_color_onHover: #ffffff;
+    --pxlButton__secondaryOutline_backgroundColor_onHover: var(--pxlButton__secondary);
+}
+
+// @media (prefers-color-scheme: dark) {
+//     :root {
+//         //
+//     }
+// }

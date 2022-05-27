@@ -3,13 +3,23 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit"
   },
+  "files": ["dist"],
+  "main": "./dist/pixellot-web-ui-kit.umd.js",
+  "module": "./dist/pixellot-web-ui-kit.es.js",
+  "types": "./dist/types/main-lib.d.ts",
   "exports": {
-    "./base": "./src/components/base/index.ts",
-    "./hooks": "./src/hooks/index.ts"
+    ".": {
+      "import": "./dist/pixellot-web-ui-kit.es.js",
+      "require": "./dist/pixellot-web-ui-kit.umd.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
   },
   "dependencies": {
     "vue": "^3.2.33"
