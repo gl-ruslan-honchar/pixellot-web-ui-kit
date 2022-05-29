@@ -1,16 +1,15 @@
 {
   "name": "pixellot-web-ui-kit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
-    "preview": "vite preview --port 5050",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "dev-consumer": "vite --config ./vite.config.consumer.ts --port 3300",
+    "build-lib": "vite build --config ./vite.config.lib.ts && vue-tsc --emitDeclarationOnly",
+    "build-consumer": "vite build --config ./vite.config.consumer.ts"
   },
   "files": ["dist"],
-  "main": "./dist/pixellot-web-ui-kit.umd.js",
-  "module": "./dist/pixellot-web-ui-kit.es.js",
-  "types": "./dist/types/main-lib.d.ts",
+  "module": "./dist/lib/pixellot-web-ui-kit.es.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/pixellot-web-ui-kit.es.js",
