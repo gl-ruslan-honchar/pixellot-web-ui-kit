@@ -2,20 +2,10 @@
 
 Repository of shared web development tools for Pixellot web projects.
 
-## Project Setup
+## Installation
 
-```sh
-npm install
-```
+Install `pixellot-web-ui-kit` via your preferable package manager
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
+```bash
+npm install pixellot-web-ui-kit
 ```
