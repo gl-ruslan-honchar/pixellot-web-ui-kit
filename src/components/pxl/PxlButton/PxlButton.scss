@@ -1,0 +1,112 @@
+// @import "./pxlButton.vars.scss";
+
+.pxlButton {
+    --pxlButton__padding: 0.5rem 1rem;
+    --pxlButton__borderRadius: 10px;
+
+    --pxlButton__primary: #4627ad;
+    --pxlButton__secondary: #A9B7D1;
+
+    /* Primary */
+    --pxlButton__primary_color: #ffffff;
+    --pxlButton__primary_backgroundColor: var(--pxlButton__primary);
+    --pxlButton__primary_border: 1px solid transparent;
+    --pxlButton__primary_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Primary on Hover */
+    --pxlButton__primary_color_onHover: #ffffff;
+    --pxlButton__primary_backgroundColor_onHover: var(--pxlButton__primary);
+
+    /* Primary Outline */
+    --pxlButton__primaryOutline_color: var(--pxlButton__primary);
+    --pxlButton__primaryOutline_backgroundColor: transparent;
+    --pxlButton__primaryOutline_border: 1px solid var(--pxlButton__primary);
+    --pxlButton__primaryOutline_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Primary Outline on Hover */
+    --pxlButton__primaryOutline_color_onHover: #ffffff;
+    --pxlButton__primaryOutline_backgroundColor_onHover: var(--pxlButton__primary);
+
+    /* Secondary */
+    --pxlButton__secondary_color: #000000;
+    --pxlButton__secondary_backgroundColor: var(--pxlButton__secondary);
+    --pxlButton__secondary_border: 1px solid transparent;
+    --pxlButton__secondary_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Secondary on Hover */
+    --pxlButton__secondary_color_onHover: #000000;
+    --pxlButton__secondary_backgroundColor_onHover: var(--pxlButton__secondary);
+
+    /* Secondary Outline */
+    --pxlButton__secondaryOutline_color: var(--pxlButton__secondary);
+    --pxlButton__secondaryOutline_backgroundColor: transparent;
+    --pxlButton__secondaryOutline_border: 1px solid var(--pxlButton__secondary);
+    --pxlButton__secondaryOutline_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Secondary Outline on Hover */
+    --pxlButton__secondaryOutline_color_onHover: #ffffff;
+    --pxlButton__secondaryOutline_backgroundColor_onHover: var(--pxlButton__secondary);
+
+    display: inline-block;
+    padding: var(--pxlButton__padding);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.85;
+    }
+
+    &:active {
+        opacity: 0.75;
+    }
+
+    &[disabled] {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    @each $type in (primary, primaryOutline, secondary, secondaryOutline) {
+        &.pxlButton-#{$type} {
+            border: var(--pxlButton__#{$type}_border);
+            border-radius: var(--pxlButton__#{$type}_borderRadius);
+            color: var(--pxlButton__#{$type}_color);
+            background-color: var(--pxlButton__#{$type}_backgroundColor);
+
+            &:hover {
+                color: var(--pxlButton__#{$type}_color_onHover);
+                background-color: var(--pxlButton__#{$type}_backgroundColor_onHover);
+            }
+
+            &.pxlButton-link {
+                color: var(--pxlButton__#{$type});
+            }
+        }
+    }
+
+    &.pxlButton-link {
+        display: inline;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    }
+
+    &.pxlButton-icon, &.pxlButton-iconOutline {
+        padding: 0;
+        border: none;
+        background: none;
+    }
+
+    &.pxlButton-w-full {
+        width: 100%;
+    }
+
+    &.pxlButton-rounded-full {
+        border-radius: 9999px;
+    }
+}

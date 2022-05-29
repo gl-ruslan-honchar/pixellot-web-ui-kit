@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export type BaseButtonType = "primary" | "secondary" | "icon";
-export type BaseButtonTag = "button" | "a" | "router-link" | "div";
-export interface BaseButtonProps {
+export type PxlButtonType = "primary" | "secondary" | "icon";
+export type PxlButtonTag = "button" | "a" | "router-link" | "div";
+export interface PxlButtonProps {
   /**
    * Required. Used to create test id's for the button.
    */
@@ -37,14 +37,14 @@ export interface BaseButtonProps {
   /**
    * Defines the component tag for the button.
    */
-  tag?: BaseButtonTag;
+  tag?: PxlButtonTag;
   /**
    * Defines button type.
    */
-  type?: BaseButtonType;
+  type?: PxlButtonType;
 }
 
-const props = withDefaults(defineProps<BaseButtonProps>(), {
+const props = withDefaults(defineProps<PxlButtonProps>(), {
   tag: 'button',
   type: 'primary',
   fullWidth: false,
@@ -53,7 +53,7 @@ const props = withDefaults(defineProps<BaseButtonProps>(), {
 const emit = defineEmits(['click']);
 
 const classes = computed(() => {
-  const base = 'baseButton';
+  const base = 'pxlButton';
   const buttonType = props.outline ? `${props.type}Outline` : props.type
 
   return [
@@ -79,7 +79,7 @@ function onClick(event: Event) {
     :name="props.name"
     :title="props.title"
     :aria-label="props.title"
-    :data-test-id="props.name && `baseBtn-${props.name}`"
+    :data-test-id="props.name && `pxlBtn-${props.name}`"
     :class="classes"
     :disabled="props.disabled ? true : undefined"
     @click="onClick"
@@ -89,5 +89,5 @@ function onClick(event: Event) {
 </template>
 
 <style lang="scss">
-@import "./BaseButton.scss";
+@import "./PxlButton.scss";
 </style>
