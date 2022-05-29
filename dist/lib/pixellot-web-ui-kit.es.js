@@ -93,11 +93,14 @@ function useRequest(globalOptions) {
       }).then((response) => resolve(response)).catch(async (fetchResponseError) => {
         var _a, _b;
         requestState.value = "REQUEST_ERROR";
-        console.log(fetchResponseError);
         const responseType = options.responseType || "json";
-        const fetchError = await fetchResponseError[responseType]().catch(() => {
-        });
-        error.value = ((_b = (_a = fetchError == null ? void 0 : fetchError.errors) == null ? void 0 : _a[0]) == null ? void 0 : _b.details) || (fetchError == null ? void 0 : fetchError.message) || defaultErrorMessage;
+        if (fetchResponseError[responseType]) {
+          const fetchError = await fetchResponseError[responseType]().catch(() => {
+          });
+          error.value = ((_b = (_a = fetchError == null ? void 0 : fetchError.errors) == null ? void 0 : _a[0]) == null ? void 0 : _b.details) || (fetchError == null ? void 0 : fetchError.message) || defaultErrorMessage;
+        } else {
+          error.value = fetchResponseError.message || defaultErrorMessage;
+        }
         reject(new Error(error.value));
       });
     });
