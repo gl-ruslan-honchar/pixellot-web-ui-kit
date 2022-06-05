@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export type PxlButtonType = "primary" | "secondary" | "icon";
+export type PxlButtonType = "primary" | "secondary" | "danger" | "icon";
 export type PxlButtonTag = "button" | "a" | "router-link" | "div";
 export interface PxlButtonProps {
   /**
@@ -45,16 +45,16 @@ export interface PxlButtonProps {
 }
 
 const props = withDefaults(defineProps<PxlButtonProps>(), {
-  tag: 'button',
-  type: 'primary',
+  tag: "button",
+  type: "primary",
   fullWidth: false,
 });
 
-const emit = defineEmits(['click']);
+const emit = defineEmits(["click"]);
 
 const classes = computed(() => {
-  const base = 'pxlButton';
-  const buttonType = props.outline ? `${props.type}Outline` : props.type
+  const base = "pxlButton";
+  const buttonType = props.outline ? `${props.type}Outline` : props.type;
 
   return [
     base,
@@ -69,12 +69,13 @@ const classes = computed(() => {
 });
 
 function onClick(event: Event) {
-  emit('click', event);
+  emit("click", event);
 }
 </script>
 
 <template>
   <component
+    ref="rootRef"
     :is="props.tag"
     :name="props.name"
     :title="props.title"

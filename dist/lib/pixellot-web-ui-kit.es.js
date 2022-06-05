@@ -35,6 +35,7 @@ const _sfc_main = defineComponent({
     }
     return (_ctx, _cache) => {
       return openBlock(), createBlock(resolveDynamicComponent(props.tag), {
+        ref: "rootRef",
         name: props.name,
         title: props.title,
         "aria-label": props.title,
@@ -83,13 +84,10 @@ function useRequest(globalOptions) {
         }
         requestState.value = "REQUEST_SUCCESS";
         const responseType = options.responseType || "json";
-        return fetchResponse[responseType]();
-      }).then((response) => {
-        if (response.error) {
-          error.value = response.message || defaultErrorMessage;
-          return reject(new Error(error.value));
+        if (globalOptions == null ? void 0 : globalOptions.formatResponse) {
+          return globalOptions == null ? void 0 : globalOptions.formatResponse(fetchResponse, options);
         }
-        return response;
+        return fetchResponse[responseType]();
       }).then((response) => resolve(response)).catch(async (fetchResponseError) => {
         var _a, _b;
         requestState.value = "REQUEST_ERROR";
