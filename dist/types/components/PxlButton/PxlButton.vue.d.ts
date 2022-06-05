@@ -1,4 +1,4 @@
-export declare type PxlButtonType = "primary" | "secondary" | "icon";
+export declare type PxlButtonType = "primary" | "secondary" | "danger" | "icon";
 export declare type PxlButtonTag = "button" | "a" | "router-link" | "div";
 export interface PxlButtonProps {
     /**

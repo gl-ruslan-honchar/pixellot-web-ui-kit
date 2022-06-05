@@ -16,6 +16,11 @@ import { PxlButton } from "../../dist/lib/pixellot-web-ui-kit.es.js";
       <pxl-button name="test" type="secondary" link> Secondary Link </pxl-button>
       <pxl-button name="test" type="secondary" link outline> Secondary Link Outline </pxl-button>
       <br>
+      <pxl-button name="test" type="danger"> Danger Button </pxl-button>
+      <pxl-button name="test" type="danger" outline> Danger Button Outline </pxl-button>
+      <pxl-button name="test" type="danger" link> Danger Link </pxl-button>
+      <pxl-button name="test" type="danger" link outline> Danger Link Outline </pxl-button>
+      <br>
       <pxl-button name="test" type="icon"> Icon </pxl-button>
       <pxl-button name="test" type="icon" outline> Icon  Outline </pxl-button>
     </div>
@@ -30,6 +35,11 @@ import { PxlButton } from "../../dist/lib/pixellot-web-ui-kit.es.js";
       <pxl-button disabled name="test" type="secondary" outline> Secondary Button Outline </pxl-button>
       <pxl-button disabled name="test" type="secondary" link> Secondary Link </pxl-button>
       <pxl-button disabled name="test" type="secondary" link outline> Secondary Link Outline </pxl-button>
+      <br>
+      <pxl-button disabled name="test" type="danger"> Danger Button </pxl-button>
+      <pxl-button disabled name="test" type="danger" outline> Danger Button Outline </pxl-button>
+      <pxl-button disabled name="test" type="danger" link> Danger Link </pxl-button>
+      <pxl-button disabled name="test" type="danger" link outline> Danger Link Outline </pxl-button>
       <br>
       <pxl-button disabled name="test" type="icon"> Icon </pxl-button>
       <pxl-button disabled name="test" type="icon" outline> Icon  Outline </pxl-button>

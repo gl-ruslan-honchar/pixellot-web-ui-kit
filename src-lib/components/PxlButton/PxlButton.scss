@@ -6,6 +6,7 @@
 
     --pxlButton__primary: #4627ad;
     --pxlButton__secondary: #A9B7D1;
+    --pxlButton__danger: #d22018;
 
     /* Primary */
     --pxlButton__primary_color: #ffffff;
@@ -47,6 +48,26 @@
     --pxlButton__secondaryOutline_color_onHover: #ffffff;
     --pxlButton__secondaryOutline_backgroundColor_onHover: var(--pxlButton__secondary);
 
+    /* Danger */
+    --pxlButton__danger_color: #ffffff;
+    --pxlButton__danger_backgroundColor: var(--pxlButton__danger);
+    --pxlButton__danger_border: 1px solid transparent;
+    --pxlButton__danger_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Danger on Hover */
+    --pxlButton__danger_color_onHover: #ffffff;
+    --pxlButton__danger_backgroundColor_onHover: var(--pxlButton__danger);
+
+    /* Danger Outline */
+    --pxlButton__dangerOutline_color: var(--pxlButton__danger);
+    --pxlButton__dangerOutline_backgroundColor: transparent;
+    --pxlButton__dangerOutline_border: 1px solid var(--pxlButton__danger);
+    --pxlButton__dangerOutline_borderRadius: var(--pxlButton__borderRadius);
+
+    /* Danger Outline on Hover */
+    --pxlButton__dangerOutline_color_onHover: #ffffff;
+    --pxlButton__dangerOutline_backgroundColor_onHover: var(--pxlButton__danger);
+
     display: inline-block;
     padding: var(--pxlButton__padding);
     cursor: pointer;
@@ -65,7 +86,7 @@
         cursor: not-allowed;
     }
 
-    @each $type in (primary, primaryOutline, secondary, secondaryOutline) {
+    @each $type in (primary, primaryOutline, secondary, secondaryOutline, danger, dangerOutline) {
         &.pxlButton-#{$type} {
             border: var(--pxlButton__#{$type}_border);
             border-radius: var(--pxlButton__#{$type}_borderRadius);

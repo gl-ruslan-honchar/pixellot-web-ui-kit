@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export type PxlButtonType = "primary" | "secondary" | "icon";
+export type PxlButtonType = "primary" | "secondary" | "danger" | "icon";
 export type PxlButtonTag = "button" | "a" | "router-link" | "div";
 export interface PxlButtonProps {
   /**
