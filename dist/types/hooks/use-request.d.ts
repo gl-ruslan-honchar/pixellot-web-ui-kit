@@ -7,6 +7,7 @@ export interface RequestOptions {
 export interface GlobalRequestOptions {
     baseUrl?: string;
     beforeRequest?: (fetchOptions: RequestInit, requestOptions: RequestOptions) => void;
+    formatResponse?: (fetchResponse: Response, requestOptions: RequestOptions) => void;
 }
 export declare function useRequest(globalOptions: GlobalRequestOptions): {
     isError: import("vue").ComputedRef<boolean>;

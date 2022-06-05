@@ -19,6 +19,7 @@ export interface RequestOptions {
 export interface GlobalRequestOptions {
   baseUrl?: string;
   beforeRequest?: (fetchOptions: RequestInit, requestOptions: RequestOptions) => void;
+  formatResponse?: (fetchResponse: Response, requestOptions: RequestOptions) => void;
 }
 
 
@@ -60,19 +61,13 @@ export function useRequest(globalOptions: GlobalRequestOptions) {
           }
 
           requestState.value = REQUEST_STATE.SUCCESS;
-
           const responseType = options.responseType || 'json';
 
-          return fetchResponse[responseType]();
-        })
-        .then((response) => {
-          if (response.error) {
-            error.value = response.message || defaultErrorMessage;
-
-            return reject(new Error(error.value));
+          if (globalOptions?.formatResponse) {
+            return globalOptions?.formatResponse(fetchResponse, options);
           }
 
-          return response;
+          return fetchResponse[responseType]();
         })
         .then((response) => resolve(response))
         .catch(async (fetchResponseError) => {

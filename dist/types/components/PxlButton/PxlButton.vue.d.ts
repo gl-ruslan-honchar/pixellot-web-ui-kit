@@ -44,7 +44,9 @@ declare const _default: import("vue").DefineComponent<__VLS_WithDefaults<__VLS_T
     tag: string;
     type: string;
     fullWidth: boolean;
-}>, {}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<PxlButtonProps>, {
+}>, {
+    focus: () => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "click"[], "click", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<PxlButtonProps>, {
     tag: string;
     type: string;
     fullWidth: boolean;
