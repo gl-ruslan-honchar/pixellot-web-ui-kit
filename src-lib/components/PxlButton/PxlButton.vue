@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed, defineExpose } from "vue";
+import { computed } from "vue";
 
 export type PxlButtonType = "primary" | "secondary" | "danger" | "icon";
 export type PxlButtonTag = "button" | "a" | "router-link" | "div";
@@ -50,7 +50,6 @@ const props = withDefaults(defineProps<PxlButtonProps>(), {
   fullWidth: false,
 });
 
-const rootRef = ref();
 const emit = defineEmits(["click"]);
 
 const classes = computed(() => {
@@ -72,14 +71,6 @@ const classes = computed(() => {
 function onClick(event: Event) {
   emit("click", event);
 }
-
-defineExpose({
-  focus: () => {
-    console.log(111);
-    console.log(rootRef.value);
-    rootRef.value && rootRef.value.focus();
-  },
-});
 </script>
 
 <template>

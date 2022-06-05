@@ -1,4 +1,4 @@
-import { defineComponent, ref, computed, openBlock, createBlock, resolveDynamicComponent, normalizeClass, unref, withCtx, renderSlot } from "vue";
+import { defineComponent, computed, openBlock, createBlock, resolveDynamicComponent, normalizeClass, unref, withCtx, renderSlot, ref } from "vue";
 var PxlButton_vue_vue_type_style_index_0_lang = "";
 const _sfc_main = defineComponent({
   name: "PxlButton",
@@ -14,9 +14,8 @@ const _sfc_main = defineComponent({
     type: { default: "primary" }
   },
   emits: ["click"],
-  setup(__props, { expose, emit }) {
+  setup(__props, { emit }) {
     const props = __props;
-    const rootRef = ref();
     const classes = computed(() => {
       const base = "pxlButton";
       const buttonType = props.outline ? `${props.type}Outline` : props.type;
@@ -34,17 +33,9 @@ const _sfc_main = defineComponent({
     function onClick(event) {
       emit("click", event);
     }
-    expose({
-      focus: () => {
-        console.log(111);
-        console.log(rootRef.value);
-        rootRef.value && rootRef.value.focus();
-      }
-    });
     return (_ctx, _cache) => {
       return openBlock(), createBlock(resolveDynamicComponent(props.tag), {
-        ref_key: "rootRef",
-        ref: rootRef,
+        ref: "rootRef",
         name: props.name,
         title: props.title,
         "aria-label": props.title,
